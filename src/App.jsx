@@ -61,7 +61,7 @@ export default function App() {
     const [isAiSidebarOpen, setIsAiSidebarOpen] = useState(false);
     const [extractedText, setExtractedText] = useState("");
     const [aiPrompt, setAiPrompt] = useState("");
-    const [aiChatHistory, setAiChatHistory] = useState([{ role: 'ai', text: 'Chào bạn! Mình là Gia sư AI. Mình có thể ĐỌC HÌNH ẢNH nên hãy thử khoanh tròn 1 câu hỏi và hỏi mình nhé!' }]);
+    const [aiChatHistory, setAiChatHistory] = useState([{ role: 'ai', text: 'Chào bạn! Mình là đệ của Thành Lộc. thắc mắc gì cứ hỏi mình nhé!' }]);
     const [aiLoading, setAiLoading] = useState(false);
 
     // Auth & Data
@@ -318,7 +318,7 @@ export default function App() {
 
             const contextPrompt = `Tôi đang xem tài liệu và có đính kèm MỘT BỨC ẢNH CHỤP MÀN HÌNH CỦA TRANG HIỆN TẠI.
 Lưu ý: Bức ảnh này bao gồm chữ in của tài liệu, và có thể bao gồm các nét vẽ mực đỏ, khoanh tròn, highlight dạ quang do chính tôi vừa vẽ vào.
-Hãy đóng vai một gia sư, nhìn vào hình ảnh và các dấu hiệu tôi khoanh tròn/chỉ định để trả lời câu hỏi sau: ${queryText}
+Hãy đóng vai một gia sư, đàn em của Thành Lộc, nhìn vào hình ảnh và các dấu hiệu tôi khoanh tròn/chỉ định để trả lời câu hỏi sau: ${queryText}
 YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi thẳng vào trọng tâm, tuyệt đối không giải thích dài dòng.`;
 
             const parts = [{ text: contextPrompt }];
@@ -361,11 +361,11 @@ YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi t
             <div className="flex h-screen bg-gray-100 items-center justify-center p-4">
                 <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center border border-gray-100">
                     <div className="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4"><FileText className="w-8 h-8" /></div>
-                    <h2 className="text-2xl font-bold text-gray-800 mb-2">Học Tập Pro</h2>
-                    <p className="text-gray-500 mb-6 text-sm">Để tự động lưu nét vẽ và đồng bộ, hãy tạo một mã đăng nhập cá nhân.</p>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-2"> siêu cấp vip pờ rồ</h2>
+                    <p className="text-gray-500 mb-6 text-sm">hãy tạo hoặc nhập mã đăng nhập cá nhân.</p>
                     <form onSubmit={handleLogin} className="space-y-4">
                         <input type="text" required value={username} onChange={e => setUsername(e.target.value)} placeholder="VD: thanhloc2026" className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-center font-medium" />
-                        <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-medium flex items-center justify-center gap-2"><LogIn className="w-5 h-5" /> Bắt đầu Học</button>
+                        <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-medium flex items-center justify-center gap-2"><LogIn className="w-5 h-5" /> zôooo</button>
                     </form>
                 </div>
             </div>
@@ -381,7 +381,7 @@ YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi t
                         <div className="p-4 border-b flex justify-between items-center bg-gray-50"><h3 className="font-semibold text-gray-800">Tải Tài Liệu Lên</h3><button onClick={() => setShowAddModal(false)}><X className="w-5 h-5 text-gray-400" /></button></div>
                         <form onSubmit={handleAddDocument} className="p-6 space-y-4">
                             <div><label className="block text-sm font-medium text-gray-700 mb-1">Tên Đề thi</label><input type="text" required value={newFileName} onChange={e => setNewFileName(e.target.value)} className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" placeholder="VD: Đề Toán HK1..." /></div>
-                            <div><label className="block text-sm font-medium text-gray-700 mb-1">Chọn file PDF</label><input type="file" accept="application/pdf" required onChange={e => setNewFile(e.target.files[0])} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" /></div>
+                            <div><label className="block text-sm font-medium text-gray-700 mb-1">Chọn file </label><input type="file" accept="application/pdf" required onChange={e => setNewFile(e.target.files[0])} className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" /></div>
                             <button type="submit" disabled={isAddingDoc} className="w-full py-2 bg-indigo-600 text-white rounded-lg flex items-center justify-center gap-2">{isAddingDoc ? <Loader2 className="animate-spin" /> : <Upload />} Tải lên</button>
                         </form>
                     </div>
@@ -418,7 +418,7 @@ YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi t
             {/* Sidebar Trái */}
             <div className={`${isSidebarOpen ? 'w-64' : 'w-0'} bg-white border-r flex flex-col transition-all duration-300 z-10 shrink-0 overflow-hidden`}>
                 <div className="p-4 border-b flex items-center justify-between w-64">
-                    <div className="text-indigo-600 font-bold text-xl flex items-center gap-2"><FileText /> Học Tập</div>
+                    <div className="text-indigo-600 font-bold text-xl flex items-center gap-2"><FileText /> Heloooooo</div>
                     <button onClick={handleLogout} className="text-xs text-gray-500 hover:text-red-500 underline">Thoát</button>
                 </div>
                 <div className="p-3 bg-indigo-50 text-indigo-800 text-sm font-medium flex items-center gap-2 border-b w-64"><div className="w-2 h-2 rounded-full bg-green-500"></div> <span className="truncate">User: {username}</span></div>
@@ -487,7 +487,7 @@ YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi t
                             </>
                         )}
                         <button onClick={() => setIsAiSidebarOpen(!isAiSidebarOpen)} className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-medium transition-all shadow-sm">
-                            <Sparkles className="w-4 h-4" /> <span className="hidden sm:inline text-xs">Gia Sư AI</span>
+                            <Sparkles className="w-4 h-4" /> <span className="hidden sm:inline text-xs">đệ của Lộc</span>
                         </button>
                     </div>
                 </div>
@@ -530,7 +530,7 @@ YÊU CẦU QUAN TRỌNG: Hãy trả lời thật ngắn gọn, súc tích, đi t
                                             {msg.text}
                                         </div>
                                     ))}
-                                    {aiLoading && <div className="self-start text-indigo-600 bg-white border border-gray-100 p-3 rounded-2xl rounded-bl-sm shadow-sm flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> AI đang nhìn hình ảnh...</div>}
+                                    {aiLoading && <div className="self-start text-indigo-600 bg-white border border-gray-100 p-3 rounded-2xl rounded-bl-sm shadow-sm flex items-center gap-2"><Loader2 className="w-4 h-4 animate-spin" /> hmm. đang suy nghĩ...</div>}
                                 </div>
                                 <div className="p-3 border-t bg-white shrink-0 w-full shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
                                     <form onSubmit={handleAiSubmit} className="flex gap-2">
