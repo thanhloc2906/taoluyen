@@ -3,14 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://culouclo0806.github.io/tapluyen/",
+  "homepage": "https://thanhloc2906.github.io/taoluyen/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -r https://github.com/thanhloc2906/taoluyen.git"
   },
   "dependencies": {
     "firebase": "^10.14.1",
