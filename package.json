@@ -1,0 +1,26 @@
+{
+  "name": "tapluyen",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://culouclo0806.github.io/tapluyen/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "firebase": "^10.14.1",
+    "lucide-react": "^0.378.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "gh-pages": "^6.1.1",
+    "vite": "^8.0.14"
+  }
+}
